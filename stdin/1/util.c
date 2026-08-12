@@ -93,6 +93,10 @@ static bool parse_signed(const char *str, intmax_t *n, intmax_t max) {
 }
 
 bool parse_ulong(const char *str, size_t *n) {
+	if (!(str && *str) || !n) {
+		errno = EINVAL;
+		return false;
+	}
 	uintmax_t m;
 	if (!parse_unsigned(str, &m, SIZE_MAX)) {
 		return false;
@@ -102,6 +106,10 @@ bool parse_ulong(const char *str, size_t *n) {
 }
 
 bool parse_int(const char *str, int *n) {
+	if (!(str && *str) || !n) {
+		errno = EINVAL;
+		return false;
+	}
 	intmax_t m;
 	if (!parse_signed(str, &m, INT_MAX)) {
 		return false;
