@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="10784779619524773268">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="main.c" line="2" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="main.c" line="3" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="main.c" line="5" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="main.c" line="6" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="parser.h" line="3" column="2"/>
+        </error>
+  <FileInfo check="ctu">
+<function-call call-id="parser.h:5:6" call-funcname="parse" call-argnr="1" file="main.c" line="36" col="2" call-argexpr="s" call-argvaluetype="7" call-argvalue="102" call-argvalue-ufr="0"/><function-call call-id="parser.h:5:6" call-funcname="parse" call-argnr="2" file="main.c" line="36" col="2" call-argexpr="str" call-argvaluetype="7" call-argvalue="101" call-argvalue-ufr="0"/>  </FileInfo>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl file="main.c" functionName="main" lineNumber="30" column="5"/>
+    <functioncall functionName="EOF"/>
+    <functioncall functionName="NULL"/>
+    <functioncall functionName="fgets"/>
+    <functioncall functionName="getchar"/>
+    <functioncall functionName="parse"/>
+    <functioncall functionName="perror"/>
+    <functioncall functionName="puts"/>
+    <functioncall functionName="stdin"/>
+    <functioncall functionName="strchr"/>
+  </FileInfo>
+</analyzerinfo>

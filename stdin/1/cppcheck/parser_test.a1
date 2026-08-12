@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="6591639530895570973">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="parser_test.c" line="1" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="parser_test.c" line="2" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="parser.h" line="3" column="2"/>
+        </error>
+        <error id="constVariablePointer" severity="style" msg="Variable &apos;result&apos; can be declared as pointer to const" verbose="Variable &apos;result&apos; can be declared as pointer to const" cwe="398" file0="parser_test.c">
+            <location file="parser_test.c" line="18" column="8" info="Variable &apos;result&apos; can be declared as pointer to const"/>
+            <symbol>result</symbol>
+        </error>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl file="parser_test.c" functionName="test" lineNumber="8" column="14"/>
+    <functiondecl file="parser_test.c" functionName="all_tests" lineNumber="12" column="14"/>
+    <functiondecl file="parser_test.c" functionName="main" lineNumber="17" column="5"/>
+    <functioncall functionName="all_tests"/>
+    <functioncall functionName="fprintf"/>
+    <functioncall functionName="stderr"/>
+    <functioncall functionName="stdout"/>
+    <functioncall functionName="test"/>
+  </FileInfo>
+</analyzerinfo>

@@ -1,0 +1,3 @@
+test call:[while] noreturn:[while]
+all_tests global:[tests_run] call:[test,while]
+main global:[tests_run] call:[all_tests,fprintf] noreturn:[fprintf]

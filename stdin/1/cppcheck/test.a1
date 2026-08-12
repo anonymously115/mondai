@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="18053548745151103302">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="test.c" line="1" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="test.c" line="2" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="test.c" line="3" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;fcntl.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;fcntl.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="test.c" line="4" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;sys/wait.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;sys/wait.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="test.c" line="5" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="test.c" line="6" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="test.c" line="7" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stddef.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stddef.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="util.h" line="3" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="util.h" line="4" column="2"/>
+        </error>
+        <error id="constVariablePointer" severity="style" msg="Variable &apos;result&apos; can be declared as pointer to const" verbose="Variable &apos;result&apos; can be declared as pointer to const" cwe="398" file0="test.c">
+            <location file="test.c" line="155" column="8" info="Variable &apos;result&apos; can be declared as pointer to const"/>
+            <symbol>result</symbol>
+        </error>
+  <FileInfo check="ctu">
+<function-call call-id="test.c:71:14" call-funcname="test" call-argnr="1" file="test.c" line="129" col="13" call-argexpr="0" call-argvaluetype="0" call-argvalue="0" call-argvalue-ufr="0"/><function-call call-id="test.c:71:14" call-funcname="test" call-argnr="2" file="test.c" line="129" col="13" call-argexpr="NULL" call-argvaluetype="0" call-argvalue="0" call-argvalue-ufr="0"/><function-call call-id="test.c:71:14" call-funcname="test" call-argnr="3" file="test.c" line="129" col="13" call-argexpr="0" call-argvaluetype="0" call-argvalue="0" call-argvalue-ufr="0"/><function-call call-id="test.c:71:14" call-funcname="test" call-argnr="4" file="test.c" line="129" col="13" call-argexpr="NULL" call-argvaluetype="0" call-argvalue="0" call-argvalue-ufr="0"/><function-call call-id="test.c:71:14" call-funcname="test" call-argnr="2" file="test.c" line="145" col="13" call-argexpr="ptr" call-argvaluetype="7" call-argvalue="1" call-argvalue-ufr="0"/><function-call call-id="test.c:71:14" call-funcname="test" call-argnr="4" file="test.c" line="145" col="13" call-argexpr="ptr" call-argvaluetype="7" call-argvalue="1" call-argvalue-ufr="0"/>  </FileInfo>
+  <FileInfo check="Null pointer">
+    <unsafe-usage my-id="test.c:24:14" my-argnr="1" my-argname="expected" file="test.c" line="26" col="68" value="0"/>
+    <unsafe-usage my-id="test.c:24:14" my-argnr="2" my-argname="actual" file="test.c" line="26" col="78" value="0"/>
+  </FileInfo>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl file="test.c" functionName="message_s" lineNumber="24" column="14"/>
+    <functiondecl file="test.c" functionName="exec" lineNumber="30" column="5"/>
+    <functiondecl file="test.c" functionName="test" lineNumber="71" column="14"/>
+    <functiondecl file="test.c" functionName="test_0" lineNumber="128" column="14"/>
+    <functiondecl file="test.c" functionName="test_1" lineNumber="132" column="14"/>
+    <functiondecl file="test.c" functionName="all_tests" lineNumber="148" column="14"/>
+    <functiondecl file="test.c" functionName="main" lineNumber="154" column="5"/>
+    <functioncall functionName="NULL"/>
+    <functioncall functionName="O_RDONLY"/>
+    <functioncall functionName="O_TRUNC"/>
+    <functioncall functionName="STDERR_FILENO"/>
+    <functioncall functionName="STDIN_FILENO"/>
+    <functioncall functionName="STDOUT_FILENO"/>
+    <functioncall functionName="__FUNCTION__"/>
+    <functioncall functionName="all_tests"/>
+    <functioncall functionName="chomp"/>
+    <functioncall functionName="close"/>
+    <functioncall functionName="dup2"/>
+    <functioncall functionName="errno"/>
+    <functioncall functionName="exec"/>
+    <functioncall functionName="execl"/>
+    <functioncall functionName="exit"/>
+    <functioncall functionName="fclose"/>
+    <functioncall functionName="fgets"/>
+    <functioncall functionName="fopen"/>
+    <functioncall functionName="fork"/>
+    <functioncall functionName="fprintf"/>
+    <functioncall functionName="memset"/>
+    <functioncall functionName="message_s"/>
+    <functioncall functionName="open"/>
+    <functioncall functionName="perror"/>
+    <functioncall functionName="remove"/>
+    <functioncall functionName="snprintf"/>
+    <functioncall functionName="stderr"/>
+    <functioncall functionName="stdout"/>
+    <functioncall functionName="strcmp"/>
+    <functioncall functionName="strerror"/>
+    <functioncall functionName="strlen"/>
+    <functioncall functionName="test"/>
+    <functioncall functionName="test_0"/>
+    <functioncall functionName="test_1"/>
+    <functioncall functionName="wait"/>
+  </FileInfo>
+</analyzerinfo>
