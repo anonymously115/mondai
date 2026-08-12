@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#if !defined(_WIN32) && !defined(_WIN64)
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/wait.h>
+#endif
 #include <string.h>
 #include <time.h>
 #include <errno.h>
@@ -29,6 +31,9 @@ static char* message_s(const char *expected, const char *actual) {
 }
 
 int exec() {
+#if defined(_WIN32) || defined(_WIN64)
+	return system(".\\main <" IN " 1>" OUT " 2>" ERR);
+#else
     pid_t pid = fork();
     if (pid < 0) {
         perror(NULL);
@@ -76,6 +81,7 @@ int exec() {
 	execl("./main", "./main", NULL);
 	perror(NULL);
 	_exit(EXIT_FAILURE);
+#endif
 }
 
 static char* test(size_t n, const char *input[], size_t m, const char *expected[]) {
