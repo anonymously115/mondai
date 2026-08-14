@@ -13,13 +13,13 @@
 #define IN "in.txt"
 #define OUT "out.txt"
 #define ERR "err.txt"
-#define THROW(proc) 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 \
-	do { 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	\
-		int e = errno; 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	  \
-		do { proc } while (0); 	 	 	 	 	 	 	 	 	 	 	 	 	  \
-		static char _[256]; 	 	 	 	 	 	 	 	 	 	 	 	 	 	 \
+#define THROW(proc)                                                                 \
+	do {                                                                            \
+		int e = errno;                                                              \
+		do { proc } while (0);                                                      \
+		static char _[256];                                                         \
 		snprintf(_, sizeof(_), "%s:%d: %s\n", __FUNCTION__, __LINE__, strerror(e)); \
-		return _; 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	   \
+		return _;                                                                   \
 	} while (0)
 
 int tests_run = 0;
