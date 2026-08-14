@@ -39,48 +39,48 @@ int exec() {
         perror(NULL);
         return -1;
     }
-	if (pid > 0) {
-        int status;
+	if (pid == 0) {
+		int in = open(IN, O_RDONLY);
+		if (in < 0) {
+			perror(NULL);
+			_exit(EXIT_FAILURE);
+		}
+		if (dup2(in, STDIN_FILENO) < 0) {
+			perror(NULL);
+			_exit(EXIT_FAILURE);
+		}
+		close(in);
+		
+		int out = open(OUT, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+		if (out < 0) {
+			perror(NULL);
+			_exit(EXIT_FAILURE);
+		}
+		if (dup2(out, STDOUT_FILENO) < 0) {
+			perror(NULL);
+			_exit(EXIT_FAILURE);
+		}
+		close(out);
+		
+		int err = open(ERR, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+		if (err < 0) {
+			perror(NULL);
+			_exit(EXIT_FAILURE);
+		}
+		if (dup2(err, STDERR_FILENO) < 0) {
+			perror(NULL);
+			_exit(EXIT_FAILURE);
+		}
+		close(err);
+		
+		execl("./main", "./main", NULL);
+		perror(NULL);
+		_exit(EXIT_FAILURE);
+	} else {
+		int status;
 		wait(&status);
-        return status;
+		return status;
 	}
-
-	int in = open(IN, O_RDONLY);
-	if (in < 0) {
-		perror(NULL);
-		_exit(EXIT_FAILURE);
-	}
-	if (dup2(in, STDIN_FILENO) < 0) {
-		perror(NULL);
-		_exit(EXIT_FAILURE);
-	}
-	close(in);
-
-	int out = open(OUT, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-	if (out < 0) {
-		perror(NULL);
-		_exit(EXIT_FAILURE);
-	}
-	if (dup2(out, STDOUT_FILENO) < 0) {
-		perror(NULL);
-		_exit(EXIT_FAILURE);
-	}
-	close(out);
-
-	int err = open(ERR, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-	if (err < 0) {
-		perror(NULL);
-		_exit(EXIT_FAILURE);
-	}
-	if (dup2(err, STDERR_FILENO) < 0) {
-		perror(NULL);
-		_exit(EXIT_FAILURE);
-	}
-	close(err);
-
-	execl("./main", "./main", NULL);
-	perror(NULL);
-	_exit(EXIT_FAILURE);
 #endif
 }
 
