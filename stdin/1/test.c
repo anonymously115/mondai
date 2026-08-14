@@ -13,13 +13,13 @@
 #define IN "in.txt"
 #define OUT "out.txt"
 #define ERR "err.txt"
-#define THROW(proc)                                                                 \
-	do {                                                                            \
-		int e = errno;                                                              \
-		do { proc } while (0);                                                      \
-		static char _[256];                                                         \
+#define THROW(proc) 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 \
+	do { 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	\
+		int e = errno; 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	  \
+		do { proc } while (0); 	 	 	 	 	 	 	 	 	 	 	 	 	  \
+		static char _[256]; 	 	 	 	 	 	 	 	 	 	 	 	 	 	 \
 		snprintf(_, sizeof(_), "%s:%d: %s\n", __FUNCTION__, __LINE__, strerror(e)); \
-		return _;                                                                   \
+		return _; 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	 	   \
 	} while (0)
 
 int tests_run = 0;
@@ -34,11 +34,11 @@ int exec() {
 #if defined(_WIN32) || defined(_WIN64)
 	return system(".\\main <" IN " 1>" OUT " 2>" ERR);
 #else
-    pid_t pid = fork();
-    if (pid < 0) {
-        perror(NULL);
-        return -1;
-    }
+ 	pid_t pid = fork();
+ 	if (pid < 0) {
+ 	 	perror(NULL);
+ 	 	return -1;
+ 	}
 	if (pid == 0) {
 		int in = open(IN, O_RDONLY);
 		if (in < 0) {
@@ -169,9 +169,9 @@ static char* test_1() {
 }
 
 static char* all_tests() {
-    mu_run_test(test_0);
-    mu_run_test(test_1);
-    return 0;
+ 	mu_run_test(test_0);
+ 	mu_run_test(test_1);
+ 	return 0;
 }
 
 int main() {
