@@ -1,1 +1,0 @@
-main global:[END] call:[fgets,getchar,parse,perror,puts,sizeof,strchr,while] noreturn:[perror]
