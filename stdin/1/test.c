@@ -13,6 +13,8 @@
 #define IN "in.txt"
 #define OUT "out.txt"
 #define ERR "err.txt"
+#define MAIN "./main"
+#define SIZE(a) (sizeof(a) / sizeof(*a))
 #define THROW(proc)                                                                 \
 	do {                                                                            \
 		int e = errno;                                                              \
@@ -73,7 +75,7 @@ int exec() {
 		}
 		close(err);
 		
-		execl("./main", "./main", NULL);
+		execl(MAIN, MAIN, NULL);
 		perror(NULL);
 		_exit(EXIT_FAILURE);
 	} else {
