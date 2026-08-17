@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<analyzerinfo hash="10650016002089844749">
+<analyzerinfo hash="17268202440760180499">
         <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;ctype.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;ctype.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
             <location file="util.c" line="1" column="2"/>
         </error>
@@ -22,10 +22,8 @@
             <location file="util.h" line="4" column="2"/>
         </error>
   <FileInfo check="ctu">
-<function-call call-id="util.c:53:13" call-funcname="parse_unsigned" call-argnr="2" file="util.c" line="97" col="21" call-argexpr="&amp;m" call-argvaluetype="7" call-argvalue="8" call-argvalue-ufr="0"/><function-call call-id="util.c:74:13" call-funcname="parse_signed" call-argnr="2" file="util.c" line="106" col="19" call-argexpr="&amp;m" call-argvaluetype="7" call-argvalue="8" call-argvalue-ufr="0"/><function-call call-id="util.c:74:13" call-funcname="parse_signed" call-argnr="2" file="util.c" line="106" col="19" call-argexpr="m" call-argvaluetype="4" call-argvalue="0" call-argvalue-ufr="0"/><function-call call-id="util.c:23:13" call-funcname="is_positive_number" call-argnr="1" file="util.c" line="55" col="7" my-id="util.c:53:13" my-argnr="1"/>
+<function-call call-id="util.c:53:13" call-funcname="parse_unsigned" call-argnr="2" file="util.c" line="101" col="21" call-argexpr="&amp;m" call-argvaluetype="7" call-argvalue="8" call-argvalue-ufr="0"/><function-call call-id="util.c:74:13" call-funcname="parse_signed" call-argnr="2" file="util.c" line="114" col="19" call-argexpr="&amp;m" call-argvaluetype="7" call-argvalue="8" call-argvalue-ufr="0"/><function-call call-id="util.c:74:13" call-funcname="parse_signed" call-argnr="2" file="util.c" line="114" col="19" call-argexpr="m" call-argvaluetype="4" call-argvalue="0" call-argvalue-ufr="0"/><function-call call-id="util.c:23:13" call-funcname="is_positive_number" call-argnr="1" file="util.c" line="55" col="7" my-id="util.c:53:13" my-argnr="1"/>
 <function-call call-id="util.c:38:13" call-funcname="is_number" call-argnr="1" file="util.c" line="76" col="7" my-id="util.c:74:13" my-argnr="1"/>
-<function-call call-id="util.c:53:13" call-funcname="parse_unsigned" call-argnr="1" file="util.c" line="97" col="7" my-id="util.h:8:6" my-argnr="1"/>
-<function-call call-id="util.c:74:13" call-funcname="parse_signed" call-argnr="1" file="util.c" line="106" col="7" my-id="util.h:10:6" my-argnr="1"/>
   </FileInfo>
   <FileInfo check="CheckUnusedFunctions">
     <functiondecl file="util.c" functionName="chomp" lineNumber="8" column="7"/>
@@ -34,7 +32,7 @@
     <functiondecl file="util.c" functionName="parse_unsigned" lineNumber="53" column="13"/>
     <functiondecl file="util.c" functionName="parse_signed" lineNumber="74" column="13"/>
     <functiondecl file="util.c" functionName="parse_ulong" lineNumber="95" column="6"/>
-    <functiondecl file="util.c" functionName="parse_int" lineNumber="104" column="6"/>
+    <functiondecl file="util.c" functionName="parse_int" lineNumber="108" column="6"/>
     <functioncall functionName="EINVAL"/>
     <functioncall functionName="ERANGE"/>
     <functioncall functionName="NULL"/>

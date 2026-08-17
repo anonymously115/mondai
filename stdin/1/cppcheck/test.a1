@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<analyzerinfo hash="15401119698148112720">
+<analyzerinfo hash="12832799205744823585">
         <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
             <location file="test.c" line="1" column="2"/>
         </error>
@@ -7,22 +7,22 @@
             <location file="test.c" line="2" column="2"/>
         </error>
         <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="test.c" line="3" column="2"/>
-        </error>
-        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;fcntl.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;fcntl.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
             <location file="test.c" line="4" column="2"/>
         </error>
-        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;sys/wait.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;sys/wait.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;fcntl.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;fcntl.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
             <location file="test.c" line="5" column="2"/>
         </error>
-        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;sys/wait.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;sys/wait.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
             <location file="test.c" line="6" column="2"/>
         </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="test.c" line="8" column="2"/>
+        </error>
         <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;time.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;time.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="test.c" line="7" column="2"/>
+            <location file="test.c" line="9" column="2"/>
         </error>
         <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="test.c" line="8" column="2"/>
+            <location file="test.c" line="10" column="2"/>
         </error>
         <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stddef.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stddef.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
             <location file="util.h" line="3" column="2"/>
@@ -31,23 +31,23 @@
             <location file="util.h" line="4" column="2"/>
         </error>
         <error id="constVariablePointer" severity="style" msg="Variable &apos;result&apos; can be declared as pointer to const" verbose="Variable &apos;result&apos; can be declared as pointer to const" cwe="398" file0="test.c">
-            <location file="test.c" line="172" column="8" info="Variable &apos;result&apos; can be declared as pointer to const"/>
+            <location file="test.c" line="178" column="8" info="Variable &apos;result&apos; can be declared as pointer to const"/>
             <symbol>result</symbol>
         </error>
   <FileInfo check="ctu">
-<function-call call-id="test.c:81:14" call-funcname="test" call-argnr="1" file="test.c" line="146" col="13" call-argexpr="0" call-argvaluetype="0" call-argvalue="0" call-argvalue-ufr="0"/><function-call call-id="test.c:81:14" call-funcname="test" call-argnr="2" file="test.c" line="146" col="13" call-argexpr="NULL" call-argvaluetype="0" call-argvalue="0" call-argvalue-ufr="0"/><function-call call-id="test.c:81:14" call-funcname="test" call-argnr="3" file="test.c" line="146" col="13" call-argexpr="0" call-argvaluetype="0" call-argvalue="0" call-argvalue-ufr="0"/><function-call call-id="test.c:81:14" call-funcname="test" call-argnr="4" file="test.c" line="146" col="13" call-argexpr="NULL" call-argvaluetype="0" call-argvalue="0" call-argvalue-ufr="0"/><function-call call-id="test.c:81:14" call-funcname="test" call-argnr="2" file="test.c" line="162" col="13" call-argexpr="ptr" call-argvaluetype="7" call-argvalue="1" call-argvalue-ufr="0"/><function-call call-id="test.c:81:14" call-funcname="test" call-argnr="4" file="test.c" line="162" col="13" call-argexpr="ptr" call-argvaluetype="7" call-argvalue="1" call-argvalue-ufr="0"/>  </FileInfo>
+<function-call call-id="test.c:87:14" call-funcname="test" call-argnr="1" file="test.c" line="152" col="13" call-argexpr="0" call-argvaluetype="0" call-argvalue="0" call-argvalue-ufr="0"/><function-call call-id="test.c:87:14" call-funcname="test" call-argnr="2" file="test.c" line="152" col="13" call-argexpr="NULL" call-argvaluetype="0" call-argvalue="0" call-argvalue-ufr="0"/><function-call call-id="test.c:87:14" call-funcname="test" call-argnr="3" file="test.c" line="152" col="13" call-argexpr="0" call-argvaluetype="0" call-argvalue="0" call-argvalue-ufr="0"/><function-call call-id="test.c:87:14" call-funcname="test" call-argnr="4" file="test.c" line="152" col="13" call-argexpr="NULL" call-argvaluetype="0" call-argvalue="0" call-argvalue-ufr="0"/><function-call call-id="test.c:87:14" call-funcname="test" call-argnr="2" file="test.c" line="168" col="13" call-argexpr="ptr" call-argvaluetype="7" call-argvalue="1" call-argvalue-ufr="0"/><function-call call-id="test.c:87:14" call-funcname="test" call-argnr="4" file="test.c" line="168" col="13" call-argexpr="ptr" call-argvaluetype="7" call-argvalue="1" call-argvalue-ufr="0"/>  </FileInfo>
   <FileInfo check="Null pointer">
-    <unsafe-usage my-id="test.c:25:14" my-argnr="1" my-argname="expected" file="test.c" line="27" col="68" value="0"/>
-    <unsafe-usage my-id="test.c:25:14" my-argnr="2" my-argname="actual" file="test.c" line="27" col="78" value="0"/>
+    <unsafe-usage my-id="test.c:27:14" my-argnr="1" my-argname="expected" file="test.c" line="29" col="68" value="0"/>
+    <unsafe-usage my-id="test.c:27:14" my-argnr="2" my-argname="actual" file="test.c" line="29" col="78" value="0"/>
   </FileInfo>
   <FileInfo check="CheckUnusedFunctions">
-    <functiondecl file="test.c" functionName="message_s" lineNumber="25" column="14"/>
-    <functiondecl file="test.c" functionName="exec" lineNumber="31" column="5"/>
-    <functiondecl file="test.c" functionName="test" lineNumber="81" column="14"/>
-    <functiondecl file="test.c" functionName="test_0" lineNumber="145" column="14"/>
-    <functiondecl file="test.c" functionName="test_1" lineNumber="149" column="14"/>
-    <functiondecl file="test.c" functionName="all_tests" lineNumber="165" column="14"/>
-    <functiondecl file="test.c" functionName="main" lineNumber="171" column="5"/>
+    <functiondecl file="test.c" functionName="message_s" lineNumber="27" column="14"/>
+    <functiondecl file="test.c" functionName="exec" lineNumber="33" column="5"/>
+    <functiondecl file="test.c" functionName="test" lineNumber="87" column="14"/>
+    <functiondecl file="test.c" functionName="test_0" lineNumber="151" column="14"/>
+    <functiondecl file="test.c" functionName="test_1" lineNumber="155" column="14"/>
+    <functiondecl file="test.c" functionName="all_tests" lineNumber="171" column="14"/>
+    <functiondecl file="test.c" functionName="main" lineNumber="177" column="5"/>
     <functioncall functionName="CLOCKS_PER_SEC"/>
     <functioncall functionName="NULL"/>
     <functioncall functionName="O_RDONLY"/>
@@ -86,5 +86,46 @@
     <functioncall functionName="test_0"/>
     <functioncall functionName="test_1"/>
     <functioncall functionName="wait"/>
+  </FileInfo>
+  <FileInfo check="ctu">
+<function-call call-id="test.c:87:14" call-funcname="test" call-argnr="1" file="test.c" line="152" col="13" call-argexpr="0" call-argvaluetype="0" call-argvalue="0" call-argvalue-ufr="0"/><function-call call-id="test.c:87:14" call-funcname="test" call-argnr="2" file="test.c" line="152" col="13" call-argexpr="NULL" call-argvaluetype="0" call-argvalue="0" call-argvalue-ufr="0"/><function-call call-id="test.c:87:14" call-funcname="test" call-argnr="3" file="test.c" line="152" col="13" call-argexpr="0" call-argvaluetype="0" call-argvalue="0" call-argvalue-ufr="0"/><function-call call-id="test.c:87:14" call-funcname="test" call-argnr="4" file="test.c" line="152" col="13" call-argexpr="NULL" call-argvaluetype="0" call-argvalue="0" call-argvalue-ufr="0"/><function-call call-id="test.c:87:14" call-funcname="test" call-argnr="2" file="test.c" line="168" col="13" call-argexpr="ptr" call-argvaluetype="7" call-argvalue="1" call-argvalue-ufr="0"/><function-call call-id="test.c:87:14" call-funcname="test" call-argnr="4" file="test.c" line="168" col="13" call-argexpr="ptr" call-argvaluetype="7" call-argvalue="1" call-argvalue-ufr="0"/>  </FileInfo>
+  <FileInfo check="Null pointer">
+    <unsafe-usage my-id="test.c:27:14" my-argnr="1" my-argname="expected" file="test.c" line="29" col="68" value="0"/>
+    <unsafe-usage my-id="test.c:27:14" my-argnr="2" my-argname="actual" file="test.c" line="29" col="78" value="0"/>
+  </FileInfo>
+  <FileInfo check="CheckUnusedFunctions">
+    <functiondecl file="test.c" functionName="message_s" lineNumber="27" column="14"/>
+    <functiondecl file="test.c" functionName="exec" lineNumber="33" column="5"/>
+    <functiondecl file="test.c" functionName="test" lineNumber="87" column="14"/>
+    <functiondecl file="test.c" functionName="test_0" lineNumber="151" column="14"/>
+    <functiondecl file="test.c" functionName="test_1" lineNumber="155" column="14"/>
+    <functiondecl file="test.c" functionName="all_tests" lineNumber="171" column="14"/>
+    <functiondecl file="test.c" functionName="main" lineNumber="177" column="5"/>
+    <functioncall functionName="CLOCKS_PER_SEC"/>
+    <functioncall functionName="NULL"/>
+    <functioncall functionName="__FUNCTION__"/>
+    <functioncall functionName="all_tests"/>
+    <functioncall functionName="chomp"/>
+    <functioncall functionName="clock"/>
+    <functioncall functionName="errno"/>
+    <functioncall functionName="exec"/>
+    <functioncall functionName="fclose"/>
+    <functioncall functionName="fflush"/>
+    <functioncall functionName="fgets"/>
+    <functioncall functionName="fopen"/>
+    <functioncall functionName="fprintf"/>
+    <functioncall functionName="memset"/>
+    <functioncall functionName="message_s"/>
+    <functioncall functionName="remove"/>
+    <functioncall functionName="snprintf"/>
+    <functioncall functionName="stderr"/>
+    <functioncall functionName="stdout"/>
+    <functioncall functionName="strcmp"/>
+    <functioncall functionName="strerror"/>
+    <functioncall functionName="strlen"/>
+    <functioncall functionName="system"/>
+    <functioncall functionName="test"/>
+    <functioncall functionName="test_0"/>
+    <functioncall functionName="test_1"/>
   </FileInfo>
 </analyzerinfo>
