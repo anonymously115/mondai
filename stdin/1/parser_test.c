@@ -31,6 +31,7 @@ static char* test_parse_invalid(const char *str) {
 	errno = 0;
 	char actual[101] = { };
 	mu_assert("Error: expected: <false> but was: <true>", !parse(str, actual));
+	mu_assert(message_s("", actual), !strcmp(actual, ""));
 	mu_assert(message_d(EINVAL, errno), errno == EINVAL);
 	return 0;
 }
