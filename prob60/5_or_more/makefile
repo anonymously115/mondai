@@ -27,7 +27,7 @@ check:
 	--inline-suppr \
 	--suppress=missingIncludeSystem \
 	--suppress=checkersReport \
-	.
+	$(SRCS) $(SRCS:.c=.h)
 
 debug: CFLAGS = -fsanitize=address,undefined -g -Wall -Wextra -Werror
 debug: $(TARGET)
