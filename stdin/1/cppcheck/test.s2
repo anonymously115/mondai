@@ -1,7 +1,0 @@
-message_s call:[sizeof,snprintf]
-exec call:[_exit,close,dup2,execl,fork,open,perror,wait] noreturn:[_exit]
-test global:[tests_run] call:[chomp,clock,exec,fclose,fflush,fgets,fopen,fprintf,memset,message_s,remove,sizeof,snprintf,strcmp,strerror,strlen,while] noreturn:[fclose,message_s,while]
-test_0 call:[test] noreturn:[test]
-test_1 call:[test] noreturn:[test]
-all_tests global:[tests_run] call:[test_0,test_1,while]
-main global:[tests_run] call:[all_tests,fflush,fprintf] noreturn:[fflush]
