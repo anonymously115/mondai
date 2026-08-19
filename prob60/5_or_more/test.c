@@ -155,25 +155,32 @@ static char* test_0() {
 }
 
 static char* test_1() {
-	char str[64] = { };
-	char *s = str;
-	for (char c = '0'; c <= '9'; c++) {
-		*s++ = c;
+	const char *in[] = { "1", "4" };
+	const char *out[] = { "0" };
+	return test(SIZE(in), in, SIZE(out), out);
+}
+
+static char* test_2() {
+	const char *in[] = { "1", "5" };
+	const char *out[] = { "5" };
+	return test(SIZE(in), in, SIZE(out), out);
+}
+
+static char* test_3() {
+	const char *in[1001] = { "1000" };
+	for (size_t i = 1; i <= 1000; i++) {
+		in[i] = "1000000";
 	}
-	for (char c = 'A'; c <= 'Z'; c++) {
-		*s++ = c;
-	}
-	for (char c = 'a'; c <= 'z'; c++) {
-		*s++ = c;
-	}
-	const char *ptr[] = { str };
-	return test(1, ptr, 1, ptr);
+	const char *out[] = { "1000000000" };
+	return test(SIZE(in), in, SIZE(out), out);
 }
 
 static char* all_tests() {
- 	mu_run_test(test_0);
- 	mu_run_test(test_1);
- 	return 0;
+	mu_run_test(test_0);
+	mu_run_test(test_1);
+	mu_run_test(test_2);
+	mu_run_test(test_3);
+	return 0;
 }
 
 int main() {
