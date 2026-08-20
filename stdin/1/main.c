@@ -6,24 +6,24 @@
 #include <errno.h>
 #include "parser.h"
 const char END[] = { EOF, '\n', 0 };
-#define PARSE(buf, siz, fun, msg)                                   \
-	do {                                                            \
-		errno = 0;                                                  \
-		char buf[siz];                                              \
-		if (!fgets(buf, sizeof(buf), stdin))                        \
-			return EXIT_FAILURE;                                    \
-		if (!strchr(buf, '\n'))                                     \
-			for (int _ = getchar(); !strchr(END, _); _ = getchar());\
-		else if (fun)                                               \
-			break;                                                  \
-		perror(msg);                                                \
+#define PARSE(buf, siz, fun, msg) \
+	do { \
+		errno = 0; \
+		char buf[siz]; \
+		if (!fgets(buf, sizeof(buf), stdin)) \
+			return EXIT_FAILURE; \
+		if (!strchr(buf, '\n')) \
+			for (int _ = getchar(); !strchr(END, _); _ = getchar()); \
+		else if (fun) \
+			break; \
+		perror(msg); \
 	} while (1)
 #else
 #include <time.h>
-#define PRINT(format, ...)                      \
-	do {                                        \
+#define PRINT(format, ...) \
+	do { \
 		fprintf(stderr, format, ##__VA_ARGS__); \
-		fflush(stderr);                         \
+		fflush(stderr); \
 	} while (0)
 #endif
 
