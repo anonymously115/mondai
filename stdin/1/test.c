@@ -108,7 +108,7 @@ static char* test(size_t n, const char *input[], size_t m, const char *expected[
 	fflush(stderr);
 	if (expected != NULL && result != EXIT_SUCCESS) {
 		return "Error: expected: <EXIT_SUCCESS> but was: <EXIT_FAILURE>";
-	} else if (expected == NULL && result == EXIT_SUCCESS) {
+	} else if (expected == NULL && result != EXIT_FAILURE) {
 		return "Error: expected: <EXIT_FAILURE> but was: <EXIT_SUCCESS>";
 	}
 
