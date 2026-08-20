@@ -15,13 +15,13 @@
 #define ERR "err.txt"
 #define MAIN "./main"
 #define SIZE(a) (sizeof(a) / sizeof(*a))
-#define THROW(proc)                                                                 \
-	do {                                                                            \
-		int e = errno;                                                              \
-		do { proc } while (0);                                                      \
-		static char _[256];                                                         \
+#define THROW(proc) \
+	do { \
+		int e = errno; \
+		do { proc } while (0); \
+		static char _[256]; \
 		snprintf(_, sizeof(_), "%s:%d: %s\n", __FUNCTION__, __LINE__, strerror(e)); \
-		return _;                                                                   \
+		return _; \
 	} while (0)
 
 int tests_run = 0;
@@ -45,43 +45,47 @@ int exec() {
 		int in = open(IN, O_RDONLY);
 		if (in < 0) {
 			perror(NULL);
-			_exit(EXIT_FAILURE);
+			_exit(-1);
 		}
 		if (dup2(in, STDIN_FILENO) < 0) {
 			perror(NULL);
-			_exit(EXIT_FAILURE);
+			_exit(-1);
 		}
 		close(in);
 		
 		int out = open(OUT, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 		if (out < 0) {
 			perror(NULL);
-			_exit(EXIT_FAILURE);
+			_exit(-1);
 		}
 		if (dup2(out, STDOUT_FILENO) < 0) {
 			perror(NULL);
-			_exit(EXIT_FAILURE);
+			_exit(-1);
 		}
 		close(out);
 		
 		int err = open(ERR, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 		if (err < 0) {
 			perror(NULL);
-			_exit(EXIT_FAILURE);
+			_exit(-1);
 		}
 		if (dup2(err, STDERR_FILENO) < 0) {
 			perror(NULL);
-			_exit(EXIT_FAILURE);
+			_exit(-1);
 		}
 		close(err);
 		
 		execl(MAIN, MAIN, NULL);
 		perror(NULL);
-		_exit(EXIT_FAILURE);
+		_exit(-1);
 	} else {
 		int status;
 		wait(&status);
-		return status;
+		if (WIFEXITED(status)) {
+			return WEXITSTATUS(status);
+		} else {
+			return -1;
+		}
 	}
 #endif
 }
@@ -104,7 +108,7 @@ static char* test(size_t n, const char *input[], size_t m, const char *expected[
 	fflush(stderr);
 	if (expected != NULL && result != EXIT_SUCCESS) {
 		return "Error: expected: <EXIT_SUCCESS> but was: <EXIT_FAILURE>";
-	} else if (expected == NULL && result == EXIT_SUCCESS) {
+	} else if (expected == NULL && result != EXIT_FAILURE) {
 		return "Error: expected: <EXIT_FAILURE> but was: <EXIT_SUCCESS>";
 	}
 
