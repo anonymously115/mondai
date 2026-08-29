@@ -1,0 +1,9 @@
+take_food
+take_softdrink
+take_alcohol
+take_beer call:[take_alcohol] noreturn:[take_alcohol]
+accounting global:[num_of_left] call:[printf]
+init_Customer call:[malloc,sizeof]
+new_Customer call:[free,init_Customer,malloc,sizeof,while]
+get_num_of_left global:[num_of_left]
+del_Customer call:[free,while] noreturn:[while]

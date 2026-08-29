@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="17535739106855942376">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="Pub.h" line="4" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stddef.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stddef.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="Pub.h" line="5" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="Customer.h" line="4" column="2"/>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;Pub::_pub&apos; is never used." verbose="struct member &apos;Pub::_pub&apos; is never used." cwe="563" file0="Pub.h">
+            <location file="Pub.h" line="11" column="8"/>
+            <symbol>Pub::_pub</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;Pub::add_customer&apos; is never used." verbose="struct member &apos;Pub::add_customer&apos; is never used." cwe="563" file0="Pub.h">
+            <location file="Pub.h" line="12" column="9"/>
+            <symbol>Pub::add_customer</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;Pub::query&apos; is never used." verbose="struct member &apos;Pub::query&apos; is never used." cwe="563" file0="Pub.h">
+            <location file="Pub.h" line="13" column="9"/>
+            <symbol>Pub::query</symbol>
+        </error>
+</analyzerinfo>

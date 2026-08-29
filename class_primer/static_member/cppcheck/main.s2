@@ -1,0 +1,1 @@
+main global:[END] call:[add_customer,del_Customer,del_Pub,fgets,get_num_of_left,getchar,new_Adult,new_Customer,new_Pub,parse_age,parse_num,parse_order,perror,printf,query,sizeof,strchr,while] noreturn:[del_Customer,del_Pub,perror]

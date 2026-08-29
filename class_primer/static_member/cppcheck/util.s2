@@ -1,0 +1,8 @@
+chomp call:[isspace,strlen]
+is_positive_number call:[isdigit]
+is_number call:[is_positive_number] noreturn:[is_positive_number]
+parse_unsigned call:[is_positive_number,strtoumax]
+parse_signed call:[is_number,strtoimax]
+parse_ulong call:[parse_unsigned]
+parse_int call:[parse_signed]
+parse_uint call:[parse_unsigned]

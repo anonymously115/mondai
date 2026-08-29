@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="5855810943689510243">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
+            <location file="Customer.h" line="4" column="2"/>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;Customer::_customer&apos; is never used." verbose="struct member &apos;Customer::_customer&apos; is never used." cwe="563" file0="Customer.h">
+            <location file="Customer.h" line="15" column="13"/>
+            <symbol>Customer::_customer</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;Customer::take_food&apos; is never used." verbose="struct member &apos;Customer::take_food&apos; is never used." cwe="563" file0="Customer.h">
+            <location file="Customer.h" line="16" column="9"/>
+            <symbol>Customer::take_food</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;Customer::take_softdrink&apos; is never used." verbose="struct member &apos;Customer::take_softdrink&apos; is never used." cwe="563" file0="Customer.h">
+            <location file="Customer.h" line="17" column="9"/>
+            <symbol>Customer::take_softdrink</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;Customer::take_alcohol&apos; is never used." verbose="struct member &apos;Customer::take_alcohol&apos; is never used." cwe="563" file0="Customer.h">
+            <location file="Customer.h" line="18" column="9"/>
+            <symbol>Customer::take_alcohol</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;Customer::take_beer&apos; is never used." verbose="struct member &apos;Customer::take_beer&apos; is never used." cwe="563" file0="Customer.h">
+            <location file="Customer.h" line="19" column="9"/>
+            <symbol>Customer::take_beer</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;Customer::accounting&apos; is never used." verbose="struct member &apos;Customer::accounting&apos; is never used." cwe="563" file0="Customer.h">
+            <location file="Customer.h" line="20" column="9"/>
+            <symbol>Customer::accounting</symbol>
+        </error>
+</analyzerinfo>
