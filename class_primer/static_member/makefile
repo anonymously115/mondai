@@ -5,6 +5,9 @@ TARGET = main
 SRCS = main.c
 SRCS += parser.c
 SRCS += util.c
+SRCS += Adult.c
+SRCS += Customer.c
+SRCS += Pub.c
 OBJS = $(SRCS:.c=.o)
 
 all: release
