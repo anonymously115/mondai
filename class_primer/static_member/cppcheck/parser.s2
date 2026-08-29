@@ -1,3 +1,0 @@
-parse_num call:[chomp,parse_ulong,strcpy,strlen,strtok]
-parse_age call:[chomp,parse_uint,strcpy,strlen]
-parse_order call:[chomp,parse_uint,parse_ulong,strcmp,strcpy,strlen,strtok]

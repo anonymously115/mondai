@@ -1,4 +1,0 @@
-add_customer call:[realloc,sizeof]
-query call:[accounting,strcmp,take_alcohol,take_beer,take_food,take_softdrink] noreturn:[accounting,take_alcohol,take_beer,take_food,take_softdrink]
-new_Pub call:[free,malloc,sizeof,while]
-del_Pub call:[free,while] noreturn:[while]

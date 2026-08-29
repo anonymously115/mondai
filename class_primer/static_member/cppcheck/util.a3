@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<analyzerinfo hash="16951016373143042591">
-        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stddef.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stddef.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="util.h" line="3" column="2"/>
-        </error>
-        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.">
-            <location file="util.h" line="4" column="2"/>
-        </error>
-</analyzerinfo>

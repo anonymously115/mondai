@@ -1,4 +1,0 @@
-take_food call:[take_food] noreturn:[take_food]
-take_alcohol
-new_Adult call:[free,init_Customer,malloc,sizeof,while]
-del_Adult call:[free,while] noreturn:[while]
