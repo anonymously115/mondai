@@ -5,12 +5,16 @@ struct __Customer {
     unsigned amount;
 };
 
-static bool stub0(Customer* self) {
+static bool stub1(Customer* self, unsigned amount) {
+    (void) amount;
     return !!self;
 }
 
-static bool stub1(Customer* self, unsigned amount) {
-    (void) amount;
+static bool take_beer(Customer* self) {
+    return !!self;
+}
+
+static bool accounting(const Customer* self) {
     return !!self;
 }
 
@@ -27,8 +31,8 @@ Customer* new_Customer(void) {
     customer->take_food = stub1;
 	customer->take_softdrink = stub1;
 	customer->take_alcohol = stub1;
-	customer->take_beer = stub0;
-	customer->accounting = stub0;
+	customer->take_beer = take_beer;
+	customer->accounting = accounting;
     return customer;
 }
 

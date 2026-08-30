@@ -20,7 +20,7 @@ static bool take_food(Customer* super, unsigned m) {
         errno = EINVAL;
         return false;
     }
-    Adult *self = (Adult*) super;
+    Adult *self = super ? (Adult*) super : NULL;
     if (self->_adult->alcohol) {
         return self->_adult->take_food(super, m - 200);
     } else {
