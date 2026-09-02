@@ -17,5 +17,7 @@
         "**/.ruby-lsp": true,
         "**/.rmv/catalog/**": true,
         "*/_*": false
-    }
+    },
+    "c-cpp-flylint.cppcheck.enable": true,
+    "c-cpp-flylint.language": "c"
 }
