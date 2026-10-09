@@ -31,7 +31,6 @@ static char* message_zu(size_t expected, size_t actual) {
 }
 
 static char* test_parse_num(const char *str, size_t en, size_t ek) {
-	errno = 0;
 	size_t N, K;
 	mu_assert("Error: expected: <true> but was: <false>", parse_num(str, &N, &K));
 	mu_assert(message_zu(en, N), N == en);
@@ -83,7 +82,6 @@ static char* test_parse_num_11() { return test_parse_num_out_of_range("1001 1000
 static char* test_parse_num_12() { return test_parse_num_out_of_range("1000 1001\n"); }
 
 static char* test_parse_age(const char *str, unsigned expected) {
-	errno = 0;
 	unsigned actual;
 	mu_assert("Error: expected: <true> but was: <false>", parse_age(str, &actual));
 	mu_assert(message_u(expected, actual), actual == expected);
@@ -123,7 +121,6 @@ static char* test_parse_age_7() { return test_parse_age("100\n", 100); }
 static char* test_parse_age_8() { return test_parse_age_out_of_range("101\n"); }
 
 static char* test_parse_order(const char *str, size_t N, size_t en, const char *es, unsigned em) {
-	errno = 0;
 	size_t n;
 	char s[16] = { };
 	unsigned m;

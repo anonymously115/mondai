@@ -47,7 +47,6 @@ static char* message_p(const void* expected, const void* actual) {
 }
 
 static char* test_constructor() {
-	errno = 0;
     Pub *pub = new_Pub();
     mu_assert("Error: expected: <not null> but was: <null>", pub);
     del_Pub(&pub);

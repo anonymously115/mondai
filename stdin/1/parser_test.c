@@ -19,7 +19,6 @@ static char* message_d(int expected, int actual) {
 }
 
 static char* test_parse(const char *str, const char *expected) {
-	errno = 0;
 	char actual[101] = { };
 	mu_assert("Error: expected: <true> but was: <false>", parse(str, actual));
 	mu_assert(message_s(expected, actual), !strcmp(actual, expected));

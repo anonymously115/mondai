@@ -27,7 +27,6 @@ static char* message_d(int expected, int actual) {
 }
 
 static char* test_chomp(const char *str, const char *expected) {
-	errno = 0;
 	char actual[strlen(str) + 1];
 	const char *ptr = chomp(strcpy(actual, str));
 	mu_assert(message_s(expected, actual), !strcmp(actual, expected));
@@ -58,7 +57,6 @@ static char* test_chomp_14() { return test_chomp(" 00", " 00"); }
 static char* test_chomp_15() { return test_chomp("000", "000"); }
 
 static char* test_parse_ulong(const char *str, size_t expected) {
-	errno = 0;
 	size_t actual;
 	mu_assert("Error: expected: <true> but was: <false>", parse_ulong(str, &actual));
 	mu_assert(message_zu(expected, actual), actual == expected);
@@ -105,7 +103,6 @@ static char* test_parse_ulong_14() { return test_parse_ulong("184467440737095516
 static char* test_parse_ulong_15() { return test_parse_ulong_out_of_range("18446744073709551616"); }
 
 static char* test_parse_int(const char *str, int expected) {
-	errno = 0;
 	int actual;
 	mu_assert("Error: expected: <true> but was: <false>", parse_int(str, &actual));
 	mu_assert(message_d(expected, actual), actual == expected);

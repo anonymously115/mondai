@@ -21,7 +21,6 @@ static char* message_zu(size_t expected, size_t actual) {
 }
 
 static char* test_parse_size(const char *str, size_t expected) {
-	errno = 0;
 	size_t actual;
 	mu_assert("Error: expected: <true> but was: <false>", parse_size(str, &actual));
 	mu_assert(message_zu(expected, actual), actual == expected);
@@ -62,7 +61,6 @@ static char* test_parse_size_6() { return test_parse_size("1000\n", 1000); }
 static char* test_parse_size_7() { return test_parse_size_out_of_range("1001\n"); }
 
 static char* test_parse_element(const char *str, int expected) {
-	errno = 0;
 	int actual;
 	mu_assert("Error: expected: <true> but was: <false>", parse_element(str, &actual));
 	mu_assert(message_d(expected, actual), actual == expected);

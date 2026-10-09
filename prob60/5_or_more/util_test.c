@@ -57,7 +57,6 @@ static char* test_chomp_14() { return test_chomp(" 00", " 00"); }
 static char* test_chomp_15() { return test_chomp("000", "000"); }
 
 static char* test_parse_ulong(const char *str, size_t expected) {
-	errno = 0;
 	size_t actual;
 	mu_assert("Error: expected: <true> but was: <false>", parse_ulong(str, &actual));
 	mu_assert(message_zu(expected, actual), actual == expected);
@@ -104,7 +103,6 @@ static char* test_parse_ulong_14() { return test_parse_ulong("184467440737095516
 static char* test_parse_ulong_15() { return test_parse_ulong_out_of_range("18446744073709551616"); }
 
 static char* test_parse_int(const char *str, int expected) {
-	errno = 0;
 	int actual;
 	mu_assert("Error: expected: <true> but was: <false>", parse_int(str, &actual));
 	mu_assert(message_d(expected, actual), actual == expected);
@@ -151,7 +149,6 @@ static char* test_parse_int_14() { return test_parse_int("2147483647", INT_MAX);
 static char* test_parse_int_15() { return test_parse_int_out_of_range("2147483648"); }
 
 static char* test_sum(size_t n, const int A[], int expected) {
-	errno = 0;
 	int actual;
 	mu_assert("Error: expected: <true> but was: <false>", sum(n, A, &actual));
 	mu_assert(message_d(expected, actual), actual == expected);
@@ -268,7 +265,6 @@ static char* test_is_5_or_more_1() {
 }
 
 static char* test_filter(bool (*fn)(int), size_t n, const int A[], size_t em, const int expected[]) {
-	errno = 0;
 	size_t m;
 	int actual[n ? n : 1];
 	mu_assert("Error: expected: <true> but was: <false>", filter(fn, n, A, &m, actual));

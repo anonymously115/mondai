@@ -18,20 +18,6 @@
 
 int tests_run = 0;
 
-#if 0
-static char* message_s(const char *expected, const char *actual) {
-	static char msg[256];
-	snprintf(msg, sizeof(msg), "Error: expected: <%s> but was: <%s>", expected, actual);
-	return msg;
-}
-
-static char* message_zu(size_t expected, size_t actual) {
-	static char msg[72];
-	snprintf(msg, sizeof(msg), "Error: expected: <%zu> but was: <%zu>", expected, actual);
-	return msg;
-}
-#endif
-
 static char* message_d(int expected, int actual) {
 	static char msg[72];
 	snprintf(msg, sizeof(msg), "Error: expected: <%d> but was: <%d>", expected, actual);

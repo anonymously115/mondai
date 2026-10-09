@@ -91,7 +91,6 @@ int exec() {
 }
 
 static char* test(size_t n, const char *input[], size_t m, const char *expected[]) {
-	errno = 0;
 	FILE *in = fopen(IN, "w");
 	if (!in) THROW();
 	for (size_t i = 0; i < n; i++) {

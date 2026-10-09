@@ -54,7 +54,6 @@ static char* message_zu(size_t expected, size_t actual) {
 }
 
 static char* test_constructor() {
-	errno = 0;
     Customer *customer = new_Customer();
     mu_assert("Error: expected: <not null> but was: <null>", customer);
     del_Customer(&customer);
@@ -64,7 +63,6 @@ static char* test_constructor() {
 }
 
 static char* test_take_food_0() {
-	errno = 0;
 	unsigned m = (unsigned) (rand() % 4701 + 300);
 	Customer *customer = NULL;
 	TRY(customer = new_Customer(), &customer);
@@ -127,7 +125,6 @@ static char* test_take_food_3() {
 }
 
 static char* test_take_softdrink_0() {
-	errno = 0;
 	unsigned m = (unsigned) (rand() % 4701 + 300);
 	Customer *customer = NULL;
 	TRY(customer = new_Customer(), &customer);
@@ -190,7 +187,6 @@ static char* test_take_softdrink_3() {
 }
 
 static char* test_take_alcohol_0() {
-	errno = 0;
 	unsigned m = (unsigned) (rand() % 4701 + 300);
 	Customer *customer = NULL;
 	TRY(customer = new_Customer(), &customer);
@@ -221,7 +217,6 @@ static char* test_take_alcohol_1() {
 }
 
 static char* test_take_beer_0() {
-	errno = 0;
 	Customer *customer = NULL;
 	TRY(customer = new_Customer(), &customer);
 	bool result = customer->take_beer(customer);
@@ -250,7 +245,6 @@ static char* test_take_beer_1() {
 }
 
 static char* test_take_accounting_0() {
-	errno = 0;
 	size_t before = get_num_of_left();
 	Customer *customer = NULL;
 	TRY(customer = new_Customer(), &customer);

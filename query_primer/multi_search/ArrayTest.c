@@ -10,21 +10,6 @@
 
 int tests_run = 0;
 
-#if 0
-static char* message_s(const char *expected, const char *actual) {
-	static char msg[256];
-	snprintf(msg, sizeof(msg), "Error: expected: <%s> but was: <%s>", expected, actual);
-	return msg;
-}
-
-static char* message_zu(size_t expected, size_t actual) {
-	static char msg[72];
-	snprintf(msg, sizeof(msg), "Error: expected: <%zu> but was: <%zu>", expected, actual);
-	return msg;
-}
-
-#endif
-
 static char* message_d(int expected, int actual) {
 	static char msg[72];
 	snprintf(msg, sizeof(msg), "Error: expected: <%d> but was: <%d>", expected, actual);
@@ -50,7 +35,6 @@ static char* test_constructor_0() {
 }
 
 static char* test_search(size_t n, const size_t A[], size_t k, const size_t *expected) {
-	errno = 0;
     Array *array = new_Array(n, A);
     const size_t *actual = array->search(array, k);
     del_Array(&array);
