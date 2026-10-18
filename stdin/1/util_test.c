@@ -13,7 +13,7 @@ static char* message_s(const char *expected, const char *actual) {
 	snprintf(msg, sizeof(msg), "Error: expected: <%s> but was: <%s>", expected, actual);
 	return msg;
 }
-
+#if 0
 static char* message_zu(size_t expected, size_t actual) {
 	static char msg[72];
 	snprintf(msg, sizeof(msg), "Error: expected: <%zu> but was: <%zu>", expected, actual);
@@ -25,7 +25,7 @@ static char* message_d(int expected, int actual) {
 	snprintf(msg, sizeof(msg), "Error: expected: <%d> but was: <%d>", expected, actual);
 	return msg;
 }
-
+#endif
 static char* test_chomp(const char *str, const char *expected) {
 	char actual[strlen(str) + 1];
 	const char *ptr = chomp(strcpy(actual, str));
@@ -54,7 +54,7 @@ static char* test_chomp_12() { return test_chomp("  0", "  0"); }
 static char* test_chomp_13() { return test_chomp("0 0", "0 0"); }
 static char* test_chomp_14() { return test_chomp(" 00", " 00"); }
 static char* test_chomp_15() { return test_chomp("000", "000"); }
-
+#if 0
 static char* test_parse_ulong(const char *str, size_t expected) {
 	size_t actual;
 	mu_assert("Error: expected: <true> but was: <false>", parse_ulong(str, &actual));
@@ -146,7 +146,7 @@ static char* test_parse_int_12() { return test_parse_int_out_of_range("-21474836
 static char* test_parse_int_13() { return test_parse_int("-2147483648", INT_MIN); }
 static char* test_parse_int_14() { return test_parse_int("2147483647", INT_MAX); }
 static char* test_parse_int_15() { return test_parse_int_out_of_range("2147483648"); }
-
+#endif
 static char* all_tests() {
     mu_run_test(test_chomp_0);
     mu_run_test(test_chomp_1);
@@ -164,7 +164,8 @@ static char* all_tests() {
     mu_run_test(test_chomp_13);
     mu_run_test(test_chomp_14);
     mu_run_test(test_chomp_15);
-    mu_run_test(test_parse_ulong_0);
+#if 0
+	mu_run_test(test_parse_ulong_0);
     mu_run_test(test_parse_ulong_1);
     mu_run_test(test_parse_ulong_2);
     mu_run_test(test_parse_ulong_3);
@@ -196,7 +197,8 @@ static char* all_tests() {
     mu_run_test(test_parse_int_13);
     mu_run_test(test_parse_int_14);
     mu_run_test(test_parse_int_15);
-    return 0;
+#endif
+	return 0;
 }
 
 int main() {

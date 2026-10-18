@@ -1,4 +1,4 @@
-gcc -fsanitize=address,undefined -g -Wall -Wextra -Werror parser_test.c parser.c util.c -o parser_test 1> parser_test.log 2>&1
+gcc -fsanitize=address,undefined -g -Wall -Wextra -Wconversion -Wshadow -Wformat=2 -Wundef -Wstrict-prototypes -Wmissing-prototypes -Werror parser_test.c parser.c util.c -o parser_test 1> parser_test.log 2>&1
 if [ -e parser_test ]; then
 	./parser_test
 	rm -f parser_test

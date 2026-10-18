@@ -39,6 +39,7 @@ static bool take_softdrink(Customer* self, unsigned m) {
     return true;
 }
 
+// cppcheck-suppress constParameterCallback
 static bool take_alcohol(Customer* self, unsigned m) {
     (void) m;
     errno = 0;

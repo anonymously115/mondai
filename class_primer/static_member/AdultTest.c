@@ -11,7 +11,7 @@
 #define TRY(fun, ptr) \
 	do { \
 		if (!(fun)) { \
-			del_Adult(ptr); \
+			del_Customer((Customer**)ptr); \
 			return "Unknown error"; \
 		} \
 	} while (0)
@@ -67,7 +67,8 @@ static char* message_zu(size_t expected, size_t actual) {
 static char* test_constructor() {
     Adult *adult = new_Adult();
     mu_assert("Error: expected: <not null> but was: <null>", adult);
-    del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
     mu_assert("Error: expected: <null> but was: <not null>", !adult);
 	return 0;
 }
@@ -79,7 +80,8 @@ static char* test_take_food_0() {
 	bool result = customer->take_food(customer, 199);
 	unsigned amount;
 	TRY(get_amount(adult, &amount), &adult);
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	mu_assert("Error: expected: <true> but was: <false>", result);
 	mu_assert(message_u(199, amount), amount == 199);
 	mu_assert(message_d(0, errno), errno == 0);
@@ -95,7 +97,8 @@ static char* test_take_food_1() {
 	int e = errno;
 	unsigned amount;
 	TRY(get_amount(adult, &amount), &adult);
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	mu_assert("Error: expected: <false> but was: <true>", !result);
 	mu_assert(message_u(0, amount), amount == 0);
 	mu_assert(message_d(EINVAL, e), e == EINVAL);
@@ -112,7 +115,8 @@ static char* test_take_food_2() {
 	int e = errno;
 	unsigned amount;
 	TRY(get_amount(adult, &amount), &adult);
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	mu_assert("Error: expected: <false> but was: <true>", !result);
 	mu_assert(message_u(500, amount), amount == 500);
 	mu_assert(message_d(ERANGE, e), e == ERANGE);
@@ -127,7 +131,8 @@ static char* test_take_food_3() {
 	bool result = customer->take_food(customer, 200);
 	unsigned amount;
 	TRY(get_amount(adult, &amount), &adult);
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	mu_assert("Error: expected: <true> but was: <false>", result);
 	mu_assert(message_u(500, amount), amount == 500);
 	mu_assert(message_d(0, errno), errno == 0);
@@ -144,7 +149,8 @@ static char* test_take_food_4() {
 	int e = errno;
 	unsigned amount;
 	TRY(get_amount(adult, &amount), &adult);
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	mu_assert("Error: expected: <false> but was: <true>", !result);
 	mu_assert(message_u(UINT_MAX, amount), amount == UINT_MAX);
 	mu_assert(message_d(ERANGE, e), e == ERANGE);
@@ -160,7 +166,8 @@ static char* test_take_food_5() {
 	int e = errno;
 	unsigned amount;
 	TRY(get_amount(adult, &amount), &adult);
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	mu_assert("Error: expected: <false> but was: <true>", !result);
 	mu_assert(message_u(1, amount), amount == 1);
 	mu_assert(message_d(ERANGE, e), e == ERANGE);
@@ -175,7 +182,8 @@ static char* test_take_softdrink_0() {
 	bool result = customer->take_softdrink(customer, m);
 	unsigned amount;
 	TRY(get_amount(adult, &amount), &adult);
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	mu_assert("Error: expected: <true> but was: <false>", result);
 	mu_assert(message_u(m, amount), amount == m);
 	mu_assert(message_d(0, errno), errno == 0);
@@ -192,7 +200,8 @@ static char* test_take_softdrink_1() {
 	int e = errno;
 	unsigned amount;
 	TRY(get_amount(adult, &amount), &adult);
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	mu_assert("Error: expected: <false> but was: <true>", !result);
 	mu_assert(message_u(0, amount), amount == 0);
 	mu_assert(message_d(EINVAL, e), e == EINVAL);
@@ -209,7 +218,8 @@ static char* test_take_softdrink_2() {
 	int e = errno;
 	unsigned amount;
 	TRY(get_amount(adult, &amount), &adult);
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	mu_assert("Error: expected: <false> but was: <true>", !result);
 	mu_assert(message_u(UINT_MAX, amount), amount == UINT_MAX);
 	mu_assert(message_d(ERANGE, e), e == ERANGE);
@@ -226,7 +236,8 @@ static char* test_take_softdrink_3() {
 	int e = errno;
 	unsigned amount;
 	TRY(get_amount(adult, &amount), &adult);
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	mu_assert("Error: expected: <false> but was: <true>", !result);
 	mu_assert(message_u(1, amount), amount == 1);
 	mu_assert(message_d(ERANGE, e), e == ERANGE);
@@ -243,7 +254,8 @@ static char* test_take_alcohol_0() {
 	TRY(get_amount(adult, &amount), &adult);
 	bool alcohol;
 	TRY(get_alcohol(adult, &alcohol), &adult);
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	mu_assert("Error: expected: <true> but was: <false>", result);
 	mu_assert(message_u(m, amount), amount == m);
 	mu_assert("Error: expected: <true> but was: <false>", alcohol);
@@ -263,7 +275,8 @@ static char* test_take_alcohol_1() {
 	TRY(get_amount(adult, &amount), &adult);
 	bool alcohol;
 	TRY(get_alcohol(adult, &alcohol), &adult);
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	mu_assert("Error: expected: <false> but was: <true>", !result);
 	mu_assert(message_u(0, amount), amount == 0);
 	mu_assert("Error: expected: <false> but was: <true>", !alcohol);
@@ -281,7 +294,8 @@ static char* test_take_alcohol_2() {
 	TRY(get_amount(adult, &amount), &adult);
 	bool alcohol;
 	TRY(get_alcohol(adult, &alcohol), &adult);
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	mu_assert("Error: expected: <false> but was: <true>", !result);
 	mu_assert(message_u(UINT_MAX, amount), amount == UINT_MAX);
 	mu_assert("Error: expected: <false> but was: <true>", !alcohol);
@@ -301,7 +315,8 @@ static char* test_take_alcohol_3() {
 	TRY(get_amount(adult, &amount), &adult);
 	bool alcohol;
 	TRY(get_alcohol(adult, &alcohol), &adult);
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	mu_assert("Error: expected: <false> but was: <true>", !result);
 	mu_assert(message_u(1, amount), amount == 1);
 	mu_assert("Error: expected: <false> but was: <true>", !alcohol);
@@ -318,7 +333,8 @@ static char* test_take_beer_0() {
 	TRY(get_amount(adult, &amount), &adult);
 	bool alcohol;
 	TRY(get_alcohol(adult, &alcohol), &adult);
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	mu_assert("Error: expected: <true> but was: <false>", result);
 	mu_assert(message_u(500, amount), amount == 500);
 	mu_assert("Error: expected: <true> but was: <false>", alcohol);
@@ -337,7 +353,8 @@ static char* test_take_beer_1() {
 	TRY(get_amount(adult, &amount), &adult);
 	bool alcohol;
 	TRY(get_alcohol(adult, &alcohol), &adult);
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	mu_assert("Error: expected: <false> but was: <true>", !result);
 	mu_assert(message_u(0, amount), amount == 0);
 	mu_assert("Error: expected: <false> but was: <true>", !alcohol);
@@ -357,7 +374,8 @@ static char* test_take_beer_2() {
 	TRY(get_amount(adult, &amount), &adult);
 	bool alcohol;
 	TRY(get_alcohol(adult, &alcohol), &adult);
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	mu_assert("Error: expected: <false> but was: <true>", !result);
 	mu_assert(message_u(UINT_MAX - 499, amount), amount == UINT_MAX - 499);
 	mu_assert("Error: expected: <false> but was: <true>", !alcohol);
@@ -381,7 +399,8 @@ static char* test_take_accounting_0() {
 	#else
 		TRY(freopen("/dev/tty", "w", stdout), &adult);
 	#endif
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	size_t after = get_num_of_left();
 	FILE *file = NULL;
 	TRY(file = fopen(OUT, "r"), NULL);
@@ -416,7 +435,8 @@ static char* test_take_accounting_1() {
 	#else
 		TRY(freopen("/dev/tty", "w", stdout), &adult);
 	#endif
-	del_Adult(&adult);
+    // del_Adult(&adult);
+	del_Customer((Customer**)&adult);
 	size_t after = get_num_of_left();
 	FILE *file = NULL;
 	TRY(file = fopen(OUT, "r"), NULL);

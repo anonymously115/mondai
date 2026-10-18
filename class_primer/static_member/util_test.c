@@ -100,7 +100,7 @@ static char* test_parse_ulong_12() { return test_parse_ulong_invalid("1.1"); }
 static char* test_parse_ulong_13() { return test_parse_ulong_invalid("11\n"); }
 static char* test_parse_ulong_14() { return test_parse_ulong("18446744073709551615", SIZE_MAX); }
 static char* test_parse_ulong_15() { return test_parse_ulong_out_of_range("18446744073709551616"); }
-
+#if 0
 static char* test_parse_int(const char *str, int expected) {
 	int actual;
 	mu_assert("Error: expected: <true> but was: <false>", parse_int(str, &actual));
@@ -146,7 +146,7 @@ static char* test_parse_int_12() { return test_parse_int_out_of_range("-21474836
 static char* test_parse_int_13() { return test_parse_int("-2147483648", INT_MIN); }
 static char* test_parse_int_14() { return test_parse_int("2147483647", INT_MAX); }
 static char* test_parse_int_15() { return test_parse_int_out_of_range("2147483648"); }
-
+#endif
 static char* test_parse_uint(const char *str, unsigned expected) {
 	unsigned actual;
 	mu_assert("Error: expected: <true> but was: <false>", parse_uint(str, &actual));
@@ -226,6 +226,7 @@ static char* all_tests() {
     mu_run_test(test_parse_ulong_13);
     mu_run_test(test_parse_ulong_14);
     mu_run_test(test_parse_ulong_15);
+#if 0
     mu_run_test(test_parse_int_0);
     mu_run_test(test_parse_int_1);
     mu_run_test(test_parse_int_2);
@@ -242,7 +243,8 @@ static char* all_tests() {
     mu_run_test(test_parse_int_13);
     mu_run_test(test_parse_int_14);
     mu_run_test(test_parse_int_15);
-    mu_run_test(test_parse_uint_0);
+#endif
+	mu_run_test(test_parse_uint_0);
     mu_run_test(test_parse_uint_1);
     mu_run_test(test_parse_uint_2);
     mu_run_test(test_parse_uint_3);

@@ -19,7 +19,7 @@ char* chomp(char *str) {
 	}
 	return str;
 }
-
+#if 0
 static bool is_positive_number(const char *str) {
 	if (!(str && *str)) {
 		return false;
@@ -117,3 +117,4 @@ bool parse_int(const char *str, int *n) {
 	*n = (int) m;
 	return true;
 }
+#endif

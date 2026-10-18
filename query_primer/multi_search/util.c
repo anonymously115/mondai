@@ -34,7 +34,7 @@ static bool is_positive_number(const char *str) {
 	}
 	return true;
 }
-
+#if 0
 static bool is_number(const char *str) {
 	if (!(str && *str)) {
 		return false;
@@ -49,7 +49,7 @@ static bool is_number(const char *str) {
 		return is_positive_number(str);
 	}
 }
-
+#endif
 static bool parse_unsigned(const char *str, uintmax_t *n, uintmax_t max) {
 	errno = 0;
 	if (!is_positive_number(str)) {
@@ -70,7 +70,7 @@ static bool parse_unsigned(const char *str, uintmax_t *n, uintmax_t max) {
 	*n = m;
 	return true;
 }
-
+#if 0
 static bool parse_signed(const char *str, intmax_t *n, intmax_t max) {
 	errno = 0;
 	if (!is_number(str)) {
@@ -91,7 +91,7 @@ static bool parse_signed(const char *str, intmax_t *n, intmax_t max) {
 	*n = m;
 	return true;
 }
-
+#endif
 bool parse_ulong(const char *str, size_t *n) {
 	if (!(str && *str) || !n) {
 		errno = EINVAL;
@@ -104,7 +104,7 @@ bool parse_ulong(const char *str, size_t *n) {
 	*n = (size_t) m;
 	return true;
 }
-
+#if 0
 bool parse_int(const char *str, int *n) {
 	if (!(str && *str) || !n) {
 		errno = EINVAL;
@@ -117,3 +117,4 @@ bool parse_int(const char *str, int *n) {
 	*n = (int) m;
 	return true;
 }
+#endif

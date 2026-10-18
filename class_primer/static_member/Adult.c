@@ -75,7 +75,7 @@ Adult* new_Adult(void) {
     adult->_customer.take_alcohol = take_alcohol;
     return adult;
 }
-
+#if 0
 void del_Adult(Adult** adult) {
     if (adult && *adult) {
         FREE((*adult)->_customer._customer);
@@ -83,3 +83,4 @@ void del_Adult(Adult** adult) {
         FREE(*adult);
     }
 }
+#endif

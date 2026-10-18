@@ -63,7 +63,7 @@ bool parse_order(const char *str, size_t N, size_t *n, char *s, unsigned *m) {
 		errno = ERANGE;
 		return false;
 	}
-	char *p = strtok(NULL, " ");
+	const char *p = strtok(NULL, " ");
 	if (!p) {
 		errno = EINVAL;
 		return false;

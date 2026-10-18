@@ -12,7 +12,7 @@
 typedef struct __Customer _Customer;
 
 typedef struct Customer {
-	_Customer *_customer; 
+	_Customer *_customer;
 	bool (*take_food)(struct Customer*, unsigned);
 	bool (*take_softdrink)(struct Customer*, unsigned);
 	bool (*take_alcohol)(struct Customer*, unsigned);

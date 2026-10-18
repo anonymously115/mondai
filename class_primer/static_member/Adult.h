@@ -12,6 +12,6 @@ typedef struct Adult {
 
 Adult* new_Adult(void);
 
-void del_Adult(Adult**);
+// void del_Adult(Adult**);
 
 #endif /* ADULT_H_ */

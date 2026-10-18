@@ -1,5 +1,5 @@
 echo off
-gcc -g -Wall -Wextra -Werror -std=c99 util_test.c util.c -o util_test 1>util_test.txt 2>&1
+gcc -g -Wall -Wextra -Wconversion -Wshadow -Wformat=2 -Wundef -Wstrict-prototypes -Wmissing-prototypes -Werror -std=c99 util_test.c util.c -o util_test 1>util_test.txt 2>&1
 if exist util_test.exe (
 	.\util_test
 	echo %ERRORLEVEL%

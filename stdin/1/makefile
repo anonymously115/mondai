@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Wconversion -Wshadow -Wformat=2 -Wundef -Wstrict-prototypes -Wmissing-prototypes -Werror
 TARGET = main
 # SRCS = $(filter-out %test.c, $(wildcard *.c))
 SRCS = main.c
@@ -29,10 +29,10 @@ check:
 	--suppress=checkersReport \
 	$(SRCS) $(SRCS:.c=.h)
 
-debug: CFLAGS = -fsanitize=address,undefined -g -Wall -Wextra -Werror
+debug: CFLAGS = -fsanitize=address,undefined -g -Wall -Wextra -Wconversion -Wshadow -Wformat=2 -Wundef -Wstrict-prototypes -Wmissing-prototypes -Werror
 debug: $(TARGET)
 
-release: CFLAGS = -Wall -Wextra -Werror -DNDEBUG
+release: CFLAGS = -Wall -Wextra -Wconversion -Wshadow -Wformat=2 -Wundef -Wstrict-prototypes -Wmissing-prototypes -Werror -DNDEBUG
 release: $(TARGET)
 
 $(TARGET): $(OBJS)
