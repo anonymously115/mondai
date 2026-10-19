@@ -1,5 +1,5 @@
 echo off
-gcc -Wall -Wextra -Werror -std=c99 parser_test.c parser.c util.c -o parser_test 1>parser_test.txt 2>&1
+gcc -Wall -Wextra -Wconversion -Wshadow -Wformat=2 -Wundef -Wstrict-prototypes -Wmissing-prototypes -Werror -std=c99 parser_test.c parser.c util.c -o parser_test 1>parser_test.txt 2>&1
 if exist parser_test.exe (
 	.\parser_test
 	echo %ERRORLEVEL%

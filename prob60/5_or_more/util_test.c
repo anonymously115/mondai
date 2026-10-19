@@ -196,20 +196,20 @@ static char* test_sum_5() {
 static char* test_sum_6() {
 	int A[65536] = { };
 	for (size_t i = 0; i < 32767; i++) {
-		A[i] = i + 1;
+		A[i] = (int) i + 1;
 	}
 	for (size_t i = 32767; i < 65536; i++) {
-		A[i] = i;
+		A[i] = (int) i;
 	}
 	return test_sum(SIZE(A), A, INT_MAX);
 }
 static char* test_sum_7() {
 	int A[65536] = { };
 	for (size_t i = 0; i < 32768; i++) {
-		A[i] = ~i;
+		A[i] = ~(int) i;
 	}
 	for (size_t i = 32768; i < 65536; i++) {
-		A[i] = -i;
+		A[i] = -(int) i;
 	}
 	return test_sum(SIZE(A), A, INT_MIN);
 }

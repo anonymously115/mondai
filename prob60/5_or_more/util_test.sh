@@ -1,4 +1,4 @@
-gcc -fsanitize=address,undefined -g -Wall -Wextra -Werror util_test.c util.c -o util_test 1> util_test.log 2>&1
+gcc -fsanitize=address,undefined -g -Wall -Wextra -Wconversion -Wshadow -Wformat=2 -Wundef -Wstrict-prototypes -Wmissing-prototypes -Werror util_test.c util.c -o util_test 1> util_test.log 2>&1
 if [ -e util_test ]; then
 	./util_test
 	rm -f util_test

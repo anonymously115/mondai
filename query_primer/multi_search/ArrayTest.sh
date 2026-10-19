@@ -1,4 +1,4 @@
-gcc -fsanitize=address,undefined -g -Wall -Wextra -Werror ArrayTest.c Array.c -o ArrayTest 1> ArrayTest.log 2>&1
+gcc -fsanitize=address,undefined -g -Wall -Wextra -Wconversion -Wshadow -Wformat=2 -Wundef -Wstrict-prototypes -Wmissing-prototypes -Werror ArrayTest.c Array.c -o ArrayTest 1> ArrayTest.log 2>&1
 if [ -e ArrayTest ]; then
 	./ArrayTest
 	rm -f ArrayTest

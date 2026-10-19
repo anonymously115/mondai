@@ -1,7 +1,7 @@
 echo off
-gcc -Wall -Wextra -Werror -DNDEBUG main.c parser.c util.c -o main 1>main.txt 2>&1
+gcc -Wall -Wextra -Wconversion -Wshadow -Wformat=2 -Wundef -Wstrict-prototypes -Wmissing-prototypes -Werror -DNDEBUG main.c parser.c util.c -o main 1>main.txt 2>&1
 if exist main.exe (
-	gcc -g -Wall -Wextra -Werror test.c util.c -o test 1>test.txt 2>&1
+	gcc -g -Wall -Wextra -Wconversion -Wshadow -Wformat=2 -Wundef -Wstrict-prototypes -Wmissing-prototypes -Werror test.c util.c -o test 1>test.txt 2>&1
 	if exist test.exe (
 		.\test
 		echo %ERRORLEVEL%

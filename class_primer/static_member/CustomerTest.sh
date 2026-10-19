@@ -1,4 +1,4 @@
-gcc -fsanitize=address,undefined -g -Wall -Wextra -Werror CustomerTest.c Customer.c -o CustomerTest 1> CustomerTest.log 2>&1
+gcc -fsanitize=address,undefined -g -Wall -Wextra -Wconversion -Wshadow -Wformat=2 -Wundef -Wstrict-prototypes -Wmissing-prototypes -Werror CustomerTest.c Customer.c -o CustomerTest 1> CustomerTest.log 2>&1
 if [ -e CustomerTest ]; then
 	./CustomerTest
 	rm -f CustomerTest
