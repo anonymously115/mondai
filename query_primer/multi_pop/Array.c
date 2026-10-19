@@ -9,7 +9,7 @@ struct __Array {
 	size_t k;
 };
 
-bool pop(Array* self, int* value) {
+static bool pop(Array* self, int* value) {
 	errno = 0;
 	if (!self) {
 		errno = EINVAL;
@@ -27,7 +27,7 @@ bool pop(Array* self, int* value) {
 	return true;
 }
 
-bool show(Array* self) {
+static bool show(Array* self) {
 	errno = 0;
 	if (!self) {
 		errno = EINVAL;

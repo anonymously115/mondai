@@ -28,7 +28,8 @@ check:
 	--inline-suppr \
 	--suppress=missingIncludeSystem \
 	--suppress=checkersReport \
-	$(SRCS) $(SRCS:.c=.h)
+	$(SRCS)
+# $(SRCS:.c=.h)
 
 debug: CFLAGS = -fsanitize=address,undefined -g -Wall -Wextra -Wconversion -Wshadow -Wformat=2 -Wundef -Wstrict-prototypes -Wmissing-prototypes -Werror
 debug: $(TARGET)

@@ -3,10 +3,6 @@
 #include <errno.h>
 #include "Array.h"
 
-// #include <stdio.h>
-// #define PRINT(format,...) do{fprintf(stderr, format, ##__VA_ARGS__);fflush(stderr);}while(0);
-
-
 struct __Array {
     size_t n;
     const size_t *A;
@@ -14,7 +10,7 @@ struct __Array {
     size_t *B[];
 };
 
-size_t* search(const struct Array *array, size_t k) {
+static size_t* search(const struct Array *array, size_t k) {
     errno = 0;
     if (!array || !array->_array) {
         errno = EINVAL;

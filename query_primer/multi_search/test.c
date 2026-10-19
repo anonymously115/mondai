@@ -32,7 +32,7 @@ static char* message_s(const char *expected, const char *actual) {
 	return msg;
 }
 
-int exec() {
+static int exec() {
 #if defined(_WIN32) || defined(_WIN64)
 	return system(".\\main <" IN " 1>" OUT " 2>" ERR);
 #else
@@ -127,12 +127,12 @@ static char* test(size_t n, const char *input[], size_t m, const char *expected[
 		FILE *out = fopen(OUT, "r");
 		if (!out) THROW();
 		for (size_t i = 0; i < m; i++) {
-			if (!chomp(fgets(actual[i], sizeof(actual[i]), out))) {
+			if (!chomp(fgets(actual[i], (int) sizeof(actual[i]), out))) {
 				fclose(out);
 				return message_s(expected[i], actual[i]);
 			}
 		}
-		if (chomp(fgets(actual[m], sizeof(actual[m]), out))) {
+		if (chomp(fgets(actual[m], (int) sizeof(actual[m]), out))) {
 			fclose(out);
 			return message_s("", actual[m]);
 		}
