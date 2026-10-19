@@ -126,7 +126,7 @@ static char* test_query_0() {
 	Customer *customer = NULL;
 	TRY(customer = new_Customer(), 0, NULL, &pub);
 	TRY(pub->add_customer(pub, customer), 1, &customer, &pub);
-	bool result = pub->query(NULL, 0, "softdrink", rand() % 4701 + 300);
+	bool result = pub->query(NULL, 0, "softdrink", (unsigned) rand() % 4701 + 300);
 	int e = errno;
 	del_Customer(&customer);
 	del_Pub(&pub);
@@ -138,7 +138,7 @@ static char* test_query_0() {
 static char* test_query_1() {
 	Pub *pub = NULL;
 	TRY(pub = new_Pub(), 0, NULL, NULL);
-	bool result = pub->query(pub, 0, "softdrink", rand() % 4701 + 300);
+	bool result = pub->query(pub, 0, "softdrink", (unsigned) rand() % 4701 + 300);
 	int e = errno;
 	del_Pub(&pub);
 	mu_assert("Error: expected: <false> but was: <true>", !result);
@@ -152,7 +152,7 @@ static char* test_query_2() {
 	Customer *customer = NULL;
 	TRY(customer = new_Customer(), 0, NULL, &pub);
 	TRY(pub->add_customer(pub, customer), 1, &customer, &pub);
-	bool result = pub->query(pub, 0, NULL, rand() % 4701 + 300);
+	bool result = pub->query(pub, 0, NULL, (unsigned) rand() % 4701 + 300);
 	int e = errno;
 	del_Customer(&customer);
 	del_Pub(&pub);
@@ -167,7 +167,7 @@ static char* test_query_3() {
 	Customer *customer = NULL;
 	TRY(customer = new_Customer(), 0, NULL, &pub);
 	TRY(pub->add_customer(pub, customer), 1, &customer, &pub);
-	bool result = pub->query(pub, 0, "", rand() % 4701 + 300);
+	bool result = pub->query(pub, 0, "", (unsigned) rand() % 4701 + 300);
 	int e = errno;
 	del_Customer(&customer);
 	del_Pub(&pub);
@@ -182,7 +182,7 @@ static char* test_query_4() {
 	Customer *customer = NULL;
 	TRY(customer = new_Customer(), 0, NULL, &pub);
 	TRY(pub->add_customer(pub, customer), 1, &customer, &pub);
-	bool result = pub->query(pub, 0, "food", rand() % 4701 + 300);
+	bool result = pub->query(pub, 0, "food", (unsigned) rand() % 4701 + 300);
 	del_Customer(&customer);
 	del_Pub(&pub);
 	mu_assert("Error: expected: <true> but was: <false>", result);
@@ -196,7 +196,7 @@ static char* test_query_5() {
 	Customer *customer = NULL;
 	TRY(customer = new_Customer(), 0, NULL, &pub);
 	TRY(pub->add_customer(pub, customer), 1, &customer, &pub);
-	bool result = pub->query(pub, 0, "softdrink", rand() % 4701 + 300);
+	bool result = pub->query(pub, 0, "softdrink", (unsigned) rand() % 4701 + 300);
 	del_Customer(&customer);
 	del_Pub(&pub);
 	mu_assert("Error: expected: <true> but was: <false>", result);
@@ -210,7 +210,7 @@ static char* test_query_6() {
 	Customer *customer = NULL;
 	TRY(customer = new_Customer(), 0, NULL, &pub);
 	TRY(pub->add_customer(pub, customer), 1, &customer, &pub);
-	bool result = pub->query(pub, 0, "alcohol", rand() % 4701 + 300);
+	bool result = pub->query(pub, 0, "alcohol", (unsigned) rand() % 4701 + 300);
 	del_Customer(&customer);
 	del_Pub(&pub);
 	mu_assert("Error: expected: <true> but was: <false>", result);
@@ -224,7 +224,7 @@ static char* test_query_7() {
 	Customer *customer = NULL;
 	TRY(customer = new_Customer(), 0, NULL, &pub);
 	TRY(pub->add_customer(pub, customer), 1, &customer, &pub);
-	bool result = pub->query(pub, 0, "0", rand());
+	bool result = pub->query(pub, 0, "0", (unsigned) rand());
 	del_Customer(&customer);
 	del_Pub(&pub);
 	mu_assert("Error: expected: <true> but was: <false>", result);
@@ -238,7 +238,7 @@ static char* test_query_8() {
 	Customer *customer = NULL;
 	TRY(customer = new_Customer(), 0, NULL, &pub);
 	TRY(pub->add_customer(pub, customer), 1, &customer, &pub);
-	bool result = pub->query(pub, 0, "A", rand());
+	bool result = pub->query(pub, 0, "A", (unsigned) rand());
 	del_Customer(&customer);
 	del_Pub(&pub);
 	mu_assert("Error: expected: <true> but was: <false>", result);

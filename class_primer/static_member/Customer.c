@@ -6,6 +6,9 @@
 
 static size_t num_of_left = 0;
 
+void delete(Customer*);
+bool init_Customer(Customer*, void (*)(Customer*), unsigned**);
+
 struct __Customer {
     unsigned amount;
     void (*delete)(Customer*);

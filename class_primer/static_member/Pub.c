@@ -25,7 +25,7 @@ static bool add_customer(Pub *self, Customer *customer) {
 	return true;
 }
 
-bool query(Pub* self, size_t n, const char *s, unsigned m) {
+static bool query(Pub* self, size_t n, const char *s, unsigned m) {
 	errno = 0;
 	if (!self || !self->_pub || !s) {
 		errno = EINVAL;
